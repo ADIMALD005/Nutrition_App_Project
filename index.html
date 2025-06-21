@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriChat - Your Personal Nutrition Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🥗 NutriChat</h1>
+            <p>Your Personal Nutrition & Diet Assistant</p>
+        </div>
+
+        <div class="api-setup" id="apiSetup">
+            <h3>⚙️ Setup Required</h3>
+            <p>Please enter your Gemini API key to start chatting with your nutrition assistant:</p>
+            <input type="password" class="api-input" id="apiKeyInput" placeholder="Enter your Gemini API key...">
+            <button class="btn" onclick="saveApiKey()">Save & Start</button>
+            <p style="font-size: 12px; color: #666; margin-top: 10px;">
+                Get your free API key from: <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a>
+            </p>
+        </div>
+
+        <div class="chat-container" id="chatContainer" style="display: none;">
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <h3>Welcome to NutriChat! 🌟</h3>
+                    <p>I'm your personal nutrition and dietician assistant. I can help you with:</p>
+                    <div class="sample-questions">
+                        <div class="sample-question" onclick="askQuestion('What foods are high in protein?')">High protein foods</div>
+                        <div class="sample-question" onclick="askQuestion('Create a meal plan for weight loss')">Weight loss meal plan</div>
+                        <div class="sample-question" onclick="askQuestion('What vitamins do I need daily?')">Daily vitamins</div>
+                        <div class="sample-question" onclick="askQuestion('Healthy snack ideas')">Healthy snacks</div>
+                        <div class="sample-question" onclick="askQuestion('How much water should I drink?')">Water intake</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="loading" id="loadingIndicator">
+                <div class="spinner"></div>
+                <span>Thinking...</span>
+            </div>
+
+            <div class="chat-input-container">
+                <form class="chat-input-form" id="chatForm">
+                    <input type="text" class="chat-input" id="messageInput" 
+                           placeholder="Ask me anything about nutrition and diet..." 
+                           autocomplete="off">
+                    <button type="submit" class="send-btn" id="sendBtn">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
